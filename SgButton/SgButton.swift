@@ -33,10 +33,10 @@ class SgButton: SKSpriteNode {
         var generatedImageTexture: SKTexture?
         
         func getFont() -> UIFont {
-            var fSz: CGFloat = fontSize == nil ? 18 : fontSize!
+            let fSz: CGFloat = fontSize == nil ? 18 : fontSize!
             var font: UIFont
             if fontName != nil {
-                var f = UIFont(name: fontName!, size: fSz)
+                let f = UIFont(name: fontName!, size: fSz)
                 assert(f != nil, "Error: Cannot create font \(fontName) / \(fontSize)")
                 font = f!
             } else {
@@ -46,7 +46,7 @@ class SgButton: SKSpriteNode {
         }
         
         func getImageWithColor(color: UIColor, size: CGSize, cornerRadius: CGFloat?) -> UIImage {
-            var rect = CGRectMake(0, 0, size.width, size.height)
+            let rect = CGRectMake(0, 0, size.width, size.height)
             UIGraphicsBeginImageContextWithOptions(size, false, 0)
             color.setFill()
             
@@ -55,18 +55,18 @@ class SgButton: SKSpriteNode {
             }
             
             UIRectFill(rect)
-            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return image
         }
         
         private func getImage(tex: SKTexture) -> UIImage? {
-            var sz = tex.size()
+            let sz = tex.size()
             
             UIGraphicsBeginImageContextWithOptions(sz, false, 0.0);
-            var ctx = UIGraphicsGetCurrentContext();
+            _ = UIGraphicsGetCurrentContext();
             
-            var rect = CGRectMake(0, 0, sz.width, sz.height)
+            let rect = CGRectMake(0, 0, sz.width, sz.height)
             let view = SKView(frame:rect)
             let scene = SKScene(size: sz)
             view.backgroundColor = UIColor.clearColor()
@@ -86,7 +86,7 @@ class SgButton: SKSpriteNode {
             view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
             
             //Create the image from the context
-            var image = UIGraphicsGetImageFromCurrentImageContext();
+            let image = UIGraphicsGetImageFromCurrentImageContext();
             
             //Close the context
             UIGraphicsEndImageContext();
@@ -104,9 +104,9 @@ class SgButton: SKSpriteNode {
             if image == nil {
                 return nil
             }
-            var img = UIImage(data:  UIImageJPEGRepresentation(image, 1.0) )
-            var imageRef = CGImageCreateWithMaskingColors(img!.CGImage, colorMasking);
-            return UIImage(CGImage: imageRef, scale: image!.scale, orientation: UIImageOrientation.Up)
+            let img = UIImage(data:  UIImageJPEGRepresentation(image!, 1.0)! )
+            let imageRef = CGImageCreateWithMaskingColors(img!.CGImage, colorMasking);
+            return UIImage(CGImage: imageRef!, scale: image!.scale, orientation: UIImageOrientation.Up)
         }
 
         
@@ -116,7 +116,7 @@ class SgButton: SKSpriteNode {
         func generateTexture() -> Bool {
             
             if string != nil {
-                var color = stringColor == nil ? UIColor.blackColor() : stringColor!
+                let color = stringColor == nil ? UIColor.blackColor() : stringColor!
                 textAttributes = [
                     NSForegroundColorAttributeName: color,
                     NSFontAttributeName: getFont()
@@ -139,7 +139,7 @@ class SgButton: SKSpriteNode {
                 if string==nil {
                     generatedImageTexture = SKTexture(image: image!)
                 } else {
-                    generatedImageTexture = generatedString(image: image, string: string!, font: getFont())
+                    generatedImageTexture = generatedString(image, string: string!, font: getFont())
                 }
                 return true
             }
@@ -153,11 +153,11 @@ class SgButton: SKSpriteNode {
                      * we have to convert later all back points into transparent ones. Don not use black in the background
                      * button images if you dont want them to be transparent in case of having string
                      */
-                    var image = makeTransparent(getImage(imageTexture!))
+                    let image = makeTransparent(getImage(imageTexture!))
                     if image == nil {
                         return false
                     }
-                    generatedImageTexture = generatedString(image: image, string: string!, font: getFont())
+                    generatedImageTexture = generatedString(image, string: string!, font: getFont())
                 }
                 return true
             }
@@ -177,7 +177,7 @@ class SgButton: SKSpriteNode {
             }
 
             UIGraphicsBeginImageContextWithOptions(sz, false, 0.0);
-            var ctx = UIGraphicsGetCurrentContext();
+            let ctx = UIGraphicsGetCurrentContext();
             
             if image != nil {
                 image!.drawAtPoint(CGPointZero)
@@ -187,11 +187,11 @@ class SgButton: SKSpriteNode {
                 CGContextFillRect(ctx, CGRectMake(0, 0, sz.width, sz.height));
             }
             
-            var rect = sz==stringSz! ?  CGRectMake(0, 0, sz.width, sz.height) : CGRectMake((sz.width - stringSz!.width) * 0.5, (sz.height - stringSz!.height) * 0.5, stringSz!.width, stringSz!.height)
+            let rect = sz==stringSz! ?  CGRectMake(0, 0, sz.width, sz.height) : CGRectMake((sz.width - stringSz!.width) * 0.5, (sz.height - stringSz!.height) * 0.5, stringSz!.width, stringSz!.height)
             (string as NSString).drawInRect(rect, withAttributes: textAttributes)
             
             //Create the image from the context
-            var image = UIGraphicsGetImageFromCurrentImageContext();
+            let image = UIGraphicsGetImageFromCurrentImageContext();
             
             //Close the context
             UIGraphicsEndImageContext();
@@ -414,29 +414,30 @@ class SgButton: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !isDisabled {
             buttonState = .Highlighted
         }
         
     }
     
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if !isDisabled {
             buttonState = .Normal
             
             if buttonFunc != nil {
-                let touch = touches.anyObject() as UITouch
-                let location = touch.locationInNode(parent)
-                if self.containsPoint(location) {
-                    buttonFunc!(button: self)
+                if let touch = touches.first {
+                    let location = touch.locationInNode(parent!)
+                    if self.containsPoint(location) {
+                        buttonFunc!(button: self)
+                    }
                 }
             }
         }
     }
     
-    override func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         if !isDisabled {
             buttonState = .Normal
         }
