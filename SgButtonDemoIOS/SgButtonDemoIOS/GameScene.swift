@@ -11,7 +11,9 @@ import SpriteKit
 class GameScene: SKScene {
     var buttonSheet = Buttons()
     override func didMoveToView(view: SKView) {
-        let x: CGFloat = 400
+        self.backgroundColor = UIColor.grayColor()
+        
+        let x: CGFloat = 100
         var y: CGFloat = self.frame.height - 80
         
         /*

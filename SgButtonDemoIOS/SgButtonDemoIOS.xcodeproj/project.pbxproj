@@ -32,11 +32,9 @@
 		B129DF821AA2E7AE0013334E /* buy_d.png in Resources */ = {isa = PBXBuildFile; fileRef = B129DF6B1AA2E7AE0013334E /* buy_d.png */; };
 		B129DF831AA2E7AE0013334E /* buy_d.png in Resources */ = {isa = PBXBuildFile; fileRef = B129DF6B1AA2E7AE0013334E /* buy_d.png */; };
 		B15331551A9FE49A0026FE28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15331541A9FE49A0026FE28 /* AppDelegate.swift */; };
-		B15331571A9FE49A0026FE28 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B15331561A9FE49A0026FE28 /* GameScene.sks */; };
 		B15331591A9FE49A0026FE28 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15331581A9FE49A0026FE28 /* GameScene.swift */; };
 		B153315B1A9FE49A0026FE28 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153315A1A9FE49A0026FE28 /* GameViewController.swift */; };
 		B153315E1A9FE49A0026FE28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B153315C1A9FE49A0026FE28 /* Main.storyboard */; };
-		B15331601A9FE49A0026FE28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B153315F1A9FE49A0026FE28 /* Images.xcassets */; };
 		B15331631A9FE49A0026FE28 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15331611A9FE49A0026FE28 /* LaunchScreen.xib */; };
 		B153316F1A9FE49A0026FE28 /* SgButtonDemoIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153316E1A9FE49A0026FE28 /* SgButtonDemoIOSTests.swift */; };
 		B15331A41A9FEAEA0026FE28 /* SgButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B153318B1A9FEAEA0026FE28 /* SgButton.swift */; };
@@ -69,11 +67,9 @@
 		B153314F1A9FE49A0026FE28 /* SgButtonDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SgButtonDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B15331531A9FE49A0026FE28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15331541A9FE49A0026FE28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B15331561A9FE49A0026FE28 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B15331581A9FE49A0026FE28 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B153315A1A9FE49A0026FE28 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B153315D1A9FE49A0026FE28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B153315F1A9FE49A0026FE28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B15331621A9FE49A0026FE28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B15331681A9FE49A0026FE28 /* SgButtonDemoIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SgButtonDemoIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B153316D1A9FE49A0026FE28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -151,11 +147,9 @@
 				B153318A1A9FEAEA0026FE28 /* SgButton */,
 				B129DF5E1AA2E7AE0013334E /* BtnResources */,
 				B15331541A9FE49A0026FE28 /* AppDelegate.swift */,
-				B15331561A9FE49A0026FE28 /* GameScene.sks */,
 				B15331581A9FE49A0026FE28 /* GameScene.swift */,
 				B153315A1A9FE49A0026FE28 /* GameViewController.swift */,
 				B153315C1A9FE49A0026FE28 /* Main.storyboard */,
-				B153315F1A9FE49A0026FE28 /* Images.xcassets */,
 				B15331611A9FE49A0026FE28 /* LaunchScreen.xib */,
 				B15331521A9FE49A0026FE28 /* Supporting Files */,
 			);
@@ -281,13 +275,11 @@
 				B15331631A9FE49A0026FE28 /* LaunchScreen.xib in Resources */,
 				B129DF741AA2E7AE0013334E /* bkbtn_d.png in Resources */,
 				B129DF801AA2E7AE0013334E /* buy.png in Resources */,
-				B15331601A9FE49A0026FE28 /* Images.xcassets in Resources */,
 				B129DF6E1AA2E7AE0013334E /* back_d@2x.png in Resources */,
 				B129DF7A1AA2E7AE0013334E /* buttons.1@3x.png in Resources */,
 				B129DF761AA2E7AE0013334E /* buttons.1.png in Resources */,
 				B129DF6C1AA2E7AE0013334E /* back@2x.png in Resources */,
 				B129DF821AA2E7AE0013334E /* buy_d.png in Resources */,
-				B15331571A9FE49A0026FE28 /* GameScene.sks in Resources */,
 				B129DF721AA2E7AE0013334E /* bkbtn.png in Resources */,
 				B129DF781AA2E7AE0013334E /* buttons.1@2x.png in Resources */,
 				B129DF701AA2E7AE0013334E /* back_x@2x.png in Resources */,
