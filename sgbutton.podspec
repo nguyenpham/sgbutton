@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "sgbutton"
   s.version      = "0.0.2"
   s.summary      = "Button library for SpriteKit in Swift"
-  s.homepage     = "http://softgaroo.com"
+  s.homepage     = "https://github.com/nguyenpham/sgbutton"
   s.license      = "MIT"
   s.author       = { "nguyenpham" => "axchess@yahoo.com" }
 
