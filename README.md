@@ -19,10 +19,40 @@ Features
 * Work well with defferent screen (rentina)
 * Work well after being rotated, changed anchorPoint
 
-Usage
------
+Installation
+-------
+
+### Add files directly
+
 Copy the file SgButton.swift (in the SgButton folder) into your project.
 
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+To integrate SgButton into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+use_frameworks!
+
+pod 'sgbutton'
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+Usage
+-----
 Use image files to create buttons:
 
         var btn1 = SgButton(normalImageNamed: "back.png")
