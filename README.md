@@ -1,5 +1,10 @@
 SgButton in Swift for SpriteKit
 ===============================
+Update March 2023
+-----------------
+- Support Swift 5
+- Support sounds, new button type
+
 
 Background
 ----------
@@ -16,6 +21,7 @@ Features
 * Create buttons from image files or texture (sprite sheet)
 * Create rectangle / round corner rectangle buttons
 * Create buttons with string (text)
+* Sound click
 * Work well with defferent screen (rentina)
 * Work well after being rotated, changed anchorPoint
 
@@ -26,30 +32,6 @@ Installation
 
 Copy the file SgButton.swift (in the SgButton folder) into your project.
 
-
-### CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-To integrate SgButton into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
-use_frameworks!
-
-pod 'sgbutton'
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
-```
 
 Usage
 -----
@@ -64,13 +46,18 @@ Use textures (from spritesheet) to create buttons:
 
 Create text buttons (round corner button):
 
-        var btn4 = SgButton(normalString: "Tap me", normalStringColor: UIColor.blueColor(), size: CGSizeMake(200, 40), cornerRadius: 10.0, buttonFunc: tappedButton)
+        var btn4 = SgButton(normalString: "Tap me", normalStringColor: UIColor.blue, size: CGSizeMake(200, 40), cornerRadius: 10.0, buttonFunc: tappedButton)
+
+Users can setup for highlighed and disabled state too. Just any of parametters will be fine:
+
+        var btn44 = SgButton(normalString: "Tap me", normalStringColor: UIColor.blue, highlightedStringColor: UIColor.yellow,  size: CGSizeMake(200, 40), cornerRadius: 10.0, buttonFunc: tappedButton)
 
 Create text buttons with image as background
 
         var btn5 = SgButton(normalTexture: buttonSheet.greenbutton(), highlightedTexture: buttonSheet.yellowbutton(), buttonFunc: tappedButton)
-        btn5.setString(.Normal, string: "Are you sure?", fontSize: 24, stringColor: UIColor.whiteColor())
+        btn5.setString(.Normal, string: "Are you sure?", fontSize: 24, stringColor: UIColor.white)
 
 License
 -------
 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+Almost total free, just fair use!
